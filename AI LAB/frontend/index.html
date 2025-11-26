@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI-TECH MEDICAL LAB – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #020617;
+      --card: #0b1120;
+      --accent: #38bdf8;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0b1120, #020617);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 0 32px;
+    }
+
+    header h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    header h1 span {
+      color: var(--accent);
+    }
+
+    header p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.45;
+    }
+
+    .sub-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      font-size: 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .sub-pill span {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .card {
+      position: relative;
+      background: linear-gradient(135deg, #111827, #020617);
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.7);
+      text-decoration: none;
+      color: inherit;
+      overflow: hidden;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+      display: block;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.18), transparent 55%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 50px rgba(15, 23, 42, 0.95);
+      border-color: var(--accent);
+      background: radial-gradient(circle at top left, #0b1120, #020617);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-inner {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .card-image-wrap {
+      flex: 0 0 78px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #020617;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 78px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .card-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .card-footer {
+      font-size: 12px;
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      padding-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="sub-pill">
+        <span></span>
+        <div>Doctor Cal – virtual medical assistant (demo)</div>
+      </div>
+      <h1><span>AI-TECH</span> MEDICAL LAB</h1>
+      <p>
+        Doctor Cal is a virtual medical assistant that explains health topics in simple English.
+        This site is only for learning and experimentation. It is not medical advice and not a real medical device.
+      </p>
+    </header>
+
+    <main>
+      <div class="grid">
+        <!-- Chromosome -->
+        <a href="tool.html?tool=chromosome" class="card">
+          <div class="card-inner">
+            <div class="card-image-wrap">
+              <img src="images/card-chromosome.png" alt="Chromosome module" class="card-image" />
+            </div>
+            <div class="card-text">
+              <div class="card-tag">Computer Vision</div>
+              <div class="card-title">Chromosome classifier</div>
+              <div class="card-desc">
+                Upload a chromosome image and let Doctor Cal give a simple educational comment.
+              </div>
+              <div class="card-footer">Open chromosome lab →</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Cancer cells -->
+        <a href="tool.html?tool=cancer" class="card">
+          <div class="card-inner">
+            <div class="card-image-wrap">
+              <img src="images/card-cancer.png" alt="Cancer cell module" class="card-image" />
+            </div>
+            <div class="card-text">
+              <div class="card-tag">Pathology</div>
+              <div class="card-title">Cancer cell classifier</div>
+              <div class="card-desc">
+                Upload a microscope cell image. Doctor Cal will talk about how calm or worrying the cells look.
+              </div>
+              <div class="card-footer">Open pathology lab →</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Chest X-ray -->
+        <a href="tool.html?tool=xray" class="card">
+          <div class="card-inner">
+            <div class="card-image-wrap">
+              <img src="images/card-xray.png" alt="Chest X-ray module" class="card-image" />
+            </div>
+            <div class="card-text">
+              <div class="card-tag">Imaging</div>
+              <div class="card-title">Chest X-ray findings</div>
+              <div class="card-desc">
+                Upload a chest X-ray and get a very simple, high-level explanation from Doctor Cal.
+              </div>
+              <div class="card-footer">Open imaging lab →</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- BMI -->
+        <a href="tool.html?tool=bmi" class="card">
+          <div class="card-inner">
+            <div class="card-image-wrap">
+              <img src="images/card-bmi.png" alt="BMI module" class="card-image" />
+            </div>
+            <div class="card-text">
+              <div class="card-tag">Calculator</div>
+              <div class="card-title">BMI &amp; lifestyle</div>
+              <div class="card-desc">
+                Enter your height and weight. Doctor Cal estimates BMI and gives friendly lifestyle ideas.
+              </div>
+              <div class="card-footer">Open BMI lab →</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Drug X -->
+        <a href="tool.html?tool=dosex" class="card">
+          <div class="card-inner">
+            <div class="card-image-wrap">
+              <img src="images/card-dosex.png" alt="Drug X module" class="card-image" />
+            </div>
+            <div class="card-text">
+              <div class="card-tag">Pharmacology</div>
+              <div class="card-title">Fictional Drug X dosing</div>
+              <div class="card-desc">
+                A pretend medicine used to explain how age, weight and kidneys can affect dosing.
+              </div>
+              <div class="card-footer">Open Drug X lab →</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Cardiac risk -->
+        <a href="tool.html?tool=cardiac" class="card">
+          <div class="card-inner">
+            <div class="card-image-wrap">
+              <img src="images/card-cardiac.png" alt="Cardiac risk module" class="card-image" />
+            </div>
+            <div class="card-text">
+              <div class="card-tag">Risk</div>
+              <div class="card-title">Heart risk demo</div>
+              <div class="card-desc">
+                Enter simple risk factors and hear how Doctor Cal thinks about heart risk.
+              </div>
+              <div class="card-footer">Open heart risk lab →</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Lab blood -->
+        <a href="tool.html?tool=lab" class="card">
+          <div class="card-inner">
+            <div class="card-image-wrap">
+              <img src="images/card-lab.png" alt="Lab module" class="card-image" />
+            </div>
+            <div class="card-text">
+              <div class="card-tag">Lab</div>
+              <div class="card-title">Blood count demo</div>
+              <div class="card-desc">
+                Enter Hb, white cells and platelets. Doctor Cal explains them in simple words.
+              </div>
+              <div class="card-footer">Open lab interpretation →</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Doctor Cal Q&A -->
+        <a href="tool.html?tool=qa" class="card">
+          <div class="card-inner">
+            <div class="card-image-wrap">
+              <img src="images/card-doctorcal.png" alt="Doctor Cal chat" class="card-image" />
+            </div>
+            <div class="card-text">
+              <div class="card-tag">Chat</div>
+              <div class="card-title">Ask Doctor Cal</div>
+              <div class="card-desc">
+                Ask any general medical question and get a clear, easy-to-read explanation.
+              </div>
+              <div class="card-footer">Open Q&amp;A room →</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Information / Owner -->
+        <a href="tool.html?tool=info" class="card">
+          <div class="card-inner">
+            <div class="card-image-wrap">
+              <img src="images/card-info.png" alt="Information module" class="card-image" />
+            </div>
+            <div class="card-text">
+              <div class="card-tag">Information</div>
+              <div class="card-title">About this lab & owner</div>
+              <div class="card-desc">
+                Learn more about the creator, the idea behind this lab, and how to get in touch.
+              </div>
+              <div class="card-footer">Open information page →</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </main>
+
+    <footer>
+      © 2025 AI-TECH MEDICAL LAB • Experimental educational project by
+      <strong>Pham Minh Son</strong>
+      (<a href="mailto:phamminhson08@gmail.com">phamminhson08@gmail.com</a>).<br />
+      Doctor Cal is a virtual medical assistant for learning and experimentation only, with no real medical or diagnostic value.
+    </footer>
+  </div>
+</body>
+</html>
